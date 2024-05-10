@@ -4,7 +4,7 @@
   "name": "msalv/golden-text",
   "version": "0.1.0",
   "title": "Golden Text",
-  "category": "text",
+  "category": "mxs",
   "icon": "editor-strikethrough",
   "description": "Applies a gold leaf effect to the edges of text in 3D.",
   "supports": {
@@ -52,7 +52,7 @@
       "fontSize": 18
     }
   },
-  "textdomain": "msalv",
+  "textdomain": "mxs",
   "editorScript": "file:./index.js",
   "editorStyle": "file:./index.css",
   "style": "file:./style-index.css"

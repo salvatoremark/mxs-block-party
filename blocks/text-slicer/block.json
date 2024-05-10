@@ -4,7 +4,7 @@
   "name": "msalv/text-slicer",
   "version": "0.1.0",
   "title": "Text Slicer",
-  "category": "text",
+  "category": "mxs",
   "icon": "smiley",
   "description": "Applies a slice effect to text.",
   "supports": {
@@ -69,7 +69,7 @@
       "fontSize": 7
     }
   },
-  "textdomain": "msalv",
+  "textdomain": "mxs",
   "editorScript": "file:./index.js",
   "editorStyle": "file:./index.css",
   "style": "file:./style-index.css",

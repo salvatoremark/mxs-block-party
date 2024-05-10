@@ -4,7 +4,7 @@
   "name": "msalv/text-shadower",
   "version": "0.1.0",
   "title": "Text Shadower",
-  "category": "text",
+  "category": "mxs",
   "icon": "cloud",
   "description": "Applies a shadow effect to text.",
   "supports": {
@@ -74,7 +74,7 @@
       "fontSize": 12
     }
   },
-  "textdomain": "msalv",
+  "textdomain": "mxs",
   "editorScript": "file:./index.js",
   "editorStyle": "file:./index.css",
   "style": "file:./style-index.css"
