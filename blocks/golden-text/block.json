@@ -1,0 +1,59 @@
+{
+  "$schema": "https://schemas.wp.org/trunk/block.json",
+  "apiVersion": 3,
+  "name": "msalv/golden-text",
+  "version": "0.1.0",
+  "title": "Golden Text",
+  "category": "text",
+  "icon": "editor-strikethrough",
+  "description": "Applies a gold leaf effect to the edges of text in 3D.",
+  "supports": {
+    "shadow": true,
+    "align": true,
+    "alignWide": true,
+    "html": false,
+    "color": {
+      "background": true,
+      "text": true
+    },
+    "spacing": {
+      "padding": true,
+      "margin": false
+    }
+  },
+  "attributes": {
+    "align": {
+      "type": "string",
+      "default": "none"
+    },
+    "textAlign": {
+      "type": "string",
+      "default": "left"
+    },
+    "textInput": {
+      "type": "string",
+      "default": "Gold Rush",
+      "source": "text",
+      "selector": "div div"
+    },
+    "boxWidth": {
+      "type": "number",
+      "default": 47
+    },
+    "fontSize": {
+      "type": "number",
+      "default": 8
+    }
+  },
+  "example": {
+    "attributes": {
+      "textInput": "Gold Rush",
+      "textAlign": "center",
+      "fontSize": 18
+    }
+  },
+  "textdomain": "msalv",
+  "editorScript": "file:./index.js",
+  "editorStyle": "file:./index.css",
+  "style": "file:./style-index.css"
+}

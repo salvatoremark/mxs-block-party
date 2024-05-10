@@ -1,0 +1,81 @@
+{
+  "$schema": "https://schemas.wp.org/trunk/block.json",
+  "apiVersion": 3,
+  "name": "msalv/text-shadower",
+  "version": "0.1.0",
+  "title": "Text Shadower",
+  "category": "text",
+  "icon": "cloud",
+  "description": "Applies a shadow effect to text.",
+  "supports": {
+    "html": false,
+    "align": true,
+    "color": {
+      "background": true,
+      "text": true
+    },
+    "spacing": {
+      "padding": true,
+      "margin": false
+    }
+  },
+  "attributes": {
+    "style": {
+      "type": "object",
+      "default": {
+        "color": {
+          "background": "#F9F9F9",
+          "text": "#D61912"
+        }
+      }
+    },
+    "align": {
+      "type": "string",
+      "default": "none"
+    },
+    "textInput": {
+      "type": "string",
+      "default": "Shadow DOM",
+      "source": "text",
+      "selector": "div div"
+    },
+    "textAlign": {
+      "type": "string",
+      "default": "center"
+    },
+    "styleclass": {
+      "type": "string",
+      "default": "elegantshadow"
+    },
+    "boxWidth": {
+      "type": "number",
+      "default": 53
+    },
+    "fontSize": {
+      "type": "number",
+      "default": 7
+    }
+  },
+  "styles": [
+    {
+      "name": "rounded",
+      "label": "Rounded"
+    },
+    {
+      "name": "squared",
+      "label": "Squared",
+      "isDefault": true
+    }
+  ],
+  "example": {
+    "attributes": {
+      "textInput": "Shadow DOM",
+      "styleclass": "retroshadow",
+      "fontSize": 12
+    }
+  },
+  "textdomain": "msalv",
+  "editorScript": "file:./index.js",
+  "editorStyle": "file:./index.css",
+  "style": "file:./style-index.css"
+}

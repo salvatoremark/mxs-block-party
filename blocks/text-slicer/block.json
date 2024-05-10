@@ -1,0 +1,77 @@
+{
+  "$schema": "https://schemas.wp.org/trunk/block.json",
+  "apiVersion": 3,
+  "name": "msalv/text-slicer",
+  "version": "0.1.0",
+  "title": "Text Slicer",
+  "category": "text",
+  "icon": "smiley",
+  "description": "Applies a slice effect to text.",
+  "supports": {
+    "html": false,
+    "align": true,
+    "color": {
+      "background": true,
+      "text": true
+    },
+    "spacing": {
+      "padding": true,
+      "margin": false
+    }
+  },
+  "attributes": {
+    "style": {
+      "type": "object",
+      "default": {
+        "color": {
+          "background": "#000000",
+          "text": "#C23A2B"
+        }
+      }
+    },
+    "align": {
+      "type": "string",
+      "default": "none"
+    },
+    "textInput": {
+      "type": "string",
+      "default": "Sliced Onion",
+      "source": "text",
+      "selector": "div div"
+    },
+    "textAlign": {
+      "type": "string",
+      "default": "center"
+    },
+    "boxWidth": {
+      "type": "number",
+      "default": 52
+    },
+    "fontSize": {
+      "type": "number",
+      "default": 7
+    }
+  },
+  "styles": [
+    {
+      "name": "rounded",
+      "label": "Rounded"
+    },
+    {
+      "name": "squared",
+      "label": "Squared",
+      "isDefault": true
+    }
+  ],
+  "example": {
+    "attributes": {
+      "textInput": "Sliced Onion",
+      "fontSize": 7
+    }
+  },
+  "textdomain": "msalv",
+  "editorScript": "file:./index.js",
+  "editorStyle": "file:./index.css",
+  "style": "file:./style-index.css",
+  "script": "file:./script.js"
+}
