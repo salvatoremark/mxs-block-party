@@ -45,15 +45,15 @@
     },
     "styleclass": {
       "type": "string",
-      "default": "elegantshadow"
+      "default": "retroshadow"
     },
     "boxWidth": {
       "type": "number",
-      "default": 53
+      "default": 45
     },
     "fontSize": {
       "type": "number",
-      "default": 7
+      "default": 5
     }
   },
   "styles": [
@@ -70,11 +70,12 @@
   "example": {
     "attributes": {
       "textInput": "Shadow DOM",
+      "boxWidth": 0,
       "styleclass": "retroshadow",
       "fontSize": 12
     }
   },
-  "textdomain": "mxs",
+  "textdomain": "text-shadower",
   "editorScript": "file:./index.js",
   "editorStyle": "file:./index.css",
   "style": "file:./style-index.css"

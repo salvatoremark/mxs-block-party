@@ -66,10 +66,11 @@
   "example": {
     "attributes": {
       "textInput": "Sliced Onion",
-      "fontSize": 7
+      "boxWidth": 100,
+      "fontSize": 14
     }
   },
-  "textdomain": "mxs",
+  "textdomain": "text-slicer",
   "editorScript": "file:./index.js",
   "editorStyle": "file:./index.css",
   "style": "file:./style-index.css",
