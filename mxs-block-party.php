@@ -36,6 +36,7 @@ if (!class_exists('Msalv_MxsBlockParty')) {
       register_block_type(__DIR__ . '/build/text-shadower');
       register_block_type(__DIR__ . '/build/text-slicer');
       register_block_type(__DIR__ . '/build/golden-text');
+      register_block_type(__DIR__ . '/build/mxs-countdown');
     }
     function create_block_category($categories) {
       array_unshift($categories, ['slug' => 'mxs', 'title' => 'MXS BLOCKS']);
