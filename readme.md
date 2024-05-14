@@ -17,10 +17,10 @@ This plugin contains a set of Gutenberg blocks built in my pursuit to learn Word
 
 === Blocks Included ===
 
-• [Countdown](https://github.com/salvatoremark/mxs-countdown)
-• [Golden Text](https://github.com/salvatoremark/golden-text)
-• [Text Slicer](https://github.com/salvatoremark/text-slicer)
-• [Text Shadower](https://github.com/salvatoremark/text-shadower)
+- [Countdown](https://github.com/salvatoremark/mxs-countdown)
+- [Golden Text](https://github.com/salvatoremark/golden-text)
+- [Text Slicer](https://github.com/salvatoremark/text-slicer)
+- [Text Shadower](https://github.com/salvatoremark/text-shadower)
 
 == Installation ==
 
