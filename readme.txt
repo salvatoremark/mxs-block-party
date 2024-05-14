@@ -13,7 +13,14 @@ This block served as a personal learning project, a practical exercise in buildi
 
 == Description ==
 
-A plugin containing a set of Gutenberg blocks I've built in my pursuit to learn WordPress block development.
+This plugin contains a set of Gutenberg blocks built in my pursuit to learn WordPress block development.
+
+=== Blocks Included ===
+
+• [Countdown](https://github.com/salvatoremark/mxs-countdown)
+• [Golden Text](https://github.com/salvatoremark/golden-text)
+• [Text Slicer](https://github.com/salvatoremark/text-slicer)
+• [Text Shadower](https://github.com/salvatoremark/text-shadower)
 
 == Installation ==
 
@@ -21,4 +28,4 @@ A plugin containing a set of Gutenberg blocks I've built in my pursuit to learn 
 
 2. Activate the plugin through the 'Plugins' screen in WordPress.
 
-3. Enter "msalv" in the block inserter to see the set of available blocks from this plugin.
+3. If the blocks don't show at the top of the Inserter tool under "MXS Blocks", just enter "mxs" in the search to see the filtered set of available blocks from this plugin.
