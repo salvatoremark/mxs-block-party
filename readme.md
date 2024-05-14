@@ -1,4 +1,4 @@
-=== Mxs Block Party ===
+=== MXS Block Party ===
 
 Contributors:      Mark Salvatore
 Tags:              block
@@ -7,13 +7,10 @@ Stable tag:        0.1.0
 License:           GPL-2.0-or-later
 License URI:       https://www.gnu.org/licenses/gpl-2.0.html
 
-== Not intended for production ==
-
-This block served as a personal learning project, a practical exercise in building custom blocks.
-
 == Description ==
 
-This plugin contains a set of Gutenberg blocks built in my pursuit to learn WordPress block development.
+Not intended for production. This block served as a personal learning project, a practical exercise in building custom blocks.
+
 
 === Blocks Included ===
 
