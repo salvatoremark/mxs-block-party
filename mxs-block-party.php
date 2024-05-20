@@ -23,7 +23,8 @@ if (!class_exists('Msalv_MxsBlockParty')) {
   class Msalv_MxsBlockParty {
 
     function __construct() {
-      add_action('init', array($this, 'block_init'));
+      add_action('init', array($this, 'register_blocks'));
+      add_filter('block_categories_all', array($this, 'create_block_category'));
     }
     /**
      * Register the block using the metadata loaded from `block.json`.
@@ -31,13 +32,19 @@ if (!class_exists('Msalv_MxsBlockParty')) {
      *
      * @see https://developer.wordpress.org/reference/functions/register_block_type/
      */
-    function block_init() {
-      add_filter('block_categories_all', array($this, 'create_block_category'));
-      register_block_type(__DIR__ . '/build/text-shadower');
-      register_block_type(__DIR__ . '/build/text-slicer');
-      register_block_type(__DIR__ . '/build/golden-text');
-      register_block_type(__DIR__ . '/build/mxs-countdown');
+    function register_blocks() {
+      $blocks = [
+        ['name' => 'golden-text'],
+        ['name' => 'text-slicer'],
+        ['name' => 'text-shadower'],
+        ['name' => 'mxs-countdown'],
+      ];
+
+      foreach ($blocks as $block) {
+        register_block_type(__DIR__ . '/build/' . $block['name']);
+      }
     }
+
     function create_block_category($categories) {
       array_unshift($categories, ['slug' => 'mxs', 'title' => 'MXS BLOCKS']);
       // wp_send_json($categories);

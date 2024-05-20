@@ -28,7 +28,7 @@ export default function Save( {
 						fontSize: countdownHeadingFontSize + 'rem',
 					} }
 				>
-					{ countdownHeading }
+					{ __( countdownHeading, metadata.texdomain ) }
 				</h6>
 				<div
 					id="mxs-countdown"
@@ -48,7 +48,7 @@ export default function Save( {
 			<input
 				id="countdownMessage"
 				type="hidden"
-				value={ countdownMessage }
+				value={ __( countdownMessage, metadata.texdomain ) }
 			/>
 			<input
 				id="countdownUnitsDelimeter"

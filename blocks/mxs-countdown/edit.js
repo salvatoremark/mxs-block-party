@@ -76,7 +76,8 @@ export default function Edit( {
 			typeof daysRef.current !== 'undefined'
 		) {
 			__(
-				( daysRef.current.innerHTML = days + ' days' ),
+				( daysRef.current.innerHTML =
+					days + __( ' days', metadata.texdomain ) ),
 				metadata.textdomain
 			);
 		}
@@ -86,7 +87,11 @@ export default function Edit( {
 			typeof hoursRef.current !== 'undefined'
 		) {
 			hoursRef.current.innerHTML = __(
-				' ' + countdownUnitsDelimeter + ' ' + hours + ' hours',
+				' ' +
+					countdownUnitsDelimeter +
+					' ' +
+					hours +
+					__( ' hours', metadata.texdomain ),
 				metadata.textdomain
 			);
 		}
@@ -96,7 +101,11 @@ export default function Edit( {
 			typeof minutesRef.current !== 'undefined'
 		) {
 			minutesRef.current.innerHTML = __(
-				' ' + countdownUnitsDelimeter + ' ' + minutes + ' minutes',
+				' ' +
+					countdownUnitsDelimeter +
+					' ' +
+					minutes +
+					__( ' minutes', metadata.texdomain ),
 				metadata.textdomain
 			);
 		}
@@ -106,7 +115,11 @@ export default function Edit( {
 			typeof secondsRef.current !== 'undefined'
 		) {
 			secondsRef.current.innerHTML = __(
-				' ' + countdownUnitsDelimeter + ' ' + seconds + ' seconds',
+				' ' +
+					countdownUnitsDelimeter +
+					' ' +
+					seconds +
+					__( ' seconds', metadata.texdomain ),
 				metadata.textdomain
 			);
 		}
@@ -144,7 +157,7 @@ export default function Edit( {
 
 				<PanelBody title={ __( 'Settings' ) } initialOpen={ false }>
 					<TextControl
-						label="Heading"
+						label={ __( ' Heading', metadata.texdomain ) }
 						value={ countdownHeading }
 						onChange={ ( countdownHeading ) =>
 							setAttributes( { countdownHeading } )
@@ -152,7 +165,10 @@ export default function Edit( {
 					/>
 
 					<TextControl
-						label="Target Date Message"
+						label={ __(
+							' Target Date Message',
+							metadata.texdomain
+						) }
 						value={ countdownMessage }
 						onChange={ ( countdownMessage ) =>
 							setAttributes( { countdownMessage } )
@@ -160,14 +176,20 @@ export default function Edit( {
 					/>
 
 					<TextControl
-						label="Heading FontSize (rem)"
+						label={ __(
+							' Heading Font Size (rem)',
+							metadata.texdomain
+						) }
 						value={ countdownHeadingFontSize }
 						onChange={ ( countdownHeadingFontSize ) =>
 							setAttributes( { countdownHeadingFontSize } )
 						}
 					/>
 					<TextControl
-						label="Countdown FontSize (rem)"
+						label={ __(
+							' Countdown Font Size (rem)',
+							metadata.texdomain
+						) }
 						value={ countdownFontSize }
 						onChange={ ( countdownFontSize ) =>
 							setAttributes( { countdownFontSize } )
@@ -175,7 +197,7 @@ export default function Edit( {
 					/>
 
 					<SelectControl
-						label="Units Delimeter"
+						label={ __( ' Units Delimeter', metadata.texdomain ) }
 						value={ countdownUnitsDelimeter }
 						options={ [
 							{ label: '•', value: '•' },
@@ -189,7 +211,7 @@ export default function Edit( {
 						__nextHasNoMarginBottom
 					/>
 					<RangeControl
-						label="Box Width"
+						label={ __( ' Box Width', metadata.texdomain ) }
 						value={ boxWidth }
 						onChange={ ( boxWidth ) =>
 							setAttributes( { boxWidth } )

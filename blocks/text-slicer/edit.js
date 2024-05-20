@@ -1,75 +1,83 @@
 /**
  * WordPress dependencies
  */
-import { __ } from "@wordpress/i18n";
+import { __ } from '@wordpress/i18n';
 import {
 	useBlockProps,
 	InspectorControls,
 	BlockControls,
 	AlignmentToolbar,
-} from "@wordpress/block-editor";
-import { PanelBody, TextControl, RangeControl } from "@wordpress/components";
+} from '@wordpress/block-editor';
+import { PanelBody, TextControl, RangeControl } from '@wordpress/components';
 
 /**
  * Internal dependencies
  */
-import metadata from "./block.json";
+import metadata from './block.json';
 
-function Edit(props) {
-	const { attributes, setAttributes } = props;
+function Edit( {
+	attributes: { boxWidth, fontSize, textAlign, textInput },
+	setAttributes,
+} ) {
 	const inlineStyles = {
-		maxWidth: attributes.boxWidth + "vw",
-		fontSize: attributes.fontSize + "vw",
-		textAlign: attributes.textAlign,
+		maxWidth: boxWidth + 'vw',
+		fontSize: fontSize + 'vw',
+		textAlign,
 	};
-	const blockProps = useBlockProps({
-		className: "wrapper",
+	const blockProps = useBlockProps( {
+		className: 'wrapper',
 		style: inlineStyles,
-	});
+	} );
 
 	return (
 		<>
 			<BlockControls>
 				<AlignmentToolbar
-					value={attributes.textAlign}
-					onChange={(textAlign) => setAttributes({ textAlign })}
+					value={ textAlign }
+					onChange={ ( textAlign ) => setAttributes( { textAlign } ) }
 				/>
 			</BlockControls>
 
 			<InspectorControls>
 				<PanelBody
-					title={__("CONTROLS", metadata.texdomain)}
-					initialOpen={true}
+					title={ __( 'CONTROLS', metadata.texdomain ) }
+					initialOpen={ true }
 				>
 					<TextControl
-						label={__("Text")}
-						value={attributes.textInput}
-						onChange={(textInput) => setAttributes({ textInput })}
+						label={ __( 'Text', metadata.texdomain ) }
+						value={ textInput }
+						onChange={ ( textInput ) =>
+							setAttributes( { textInput } )
+						}
 					/>
 
 					<RangeControl
-						label="Font Size"
-						value={attributes.fontSize}
-						onChange={(fontSize) => setAttributes({ fontSize })}
-						min={3}
-						max={15}
+						label={ __( 'Font Size', metadata.texdomain ) }
+						value={ fontSize }
+						onChange={ ( fontSize ) =>
+							setAttributes( { fontSize } )
+						}
+						min={ 3 }
+						max={ 15 }
 					/>
 					<RangeControl
-						label="Box Width"
-						value={attributes.boxWidth}
-						onChange={(boxWidth) => setAttributes({ boxWidth })}
-						min={3}
-						max={100}
+						label={ __( 'Box Width', metadata.texdomain ) }
+						value={ boxWidth }
+						onChange={ ( boxWidth ) =>
+							setAttributes( { boxWidth } )
+						}
+						min={ 3 }
+						max={ 100 }
 					/>
 				</PanelBody>
 			</InspectorControls>
 
-			<div {...blockProps}>
+			<div { ...blockProps }>
 				<div className="top">
-					{__(attributes.textInput, metadata.textdomain)}
+					{ __( textInput, metadata.textdomain ) }
 				</div>
 				<div className="bottom" aria-hidden="true">
-					{__(attributes.textInput, metadata.textdomain)}
+					{ __( textInput, metadata.textdomain ) }
 				</div>
 			</div>
 		</>

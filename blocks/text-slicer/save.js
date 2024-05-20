@@ -1,34 +1,33 @@
 /**
  * WordPress dependencies
  */
-import { __ } from "@wordpress/i18n";
-import { useBlockProps } from "@wordpress/block-editor";
+import { __ } from '@wordpress/i18n';
+import { useBlockProps } from '@wordpress/block-editor';
 
 /**
  * Internal dependencies
  */
-import metadata from "./block.json";
+import metadata from './block.json';
 
-function Save(props) {
-	const { attributes } = props;
+function Save( { attributes: { boxWidth, fontSize, textAlign, textInput } } ) {
 	const inlineStyles = {
-		maxWidth: attributes.boxWidth + "vw",
-		fontSize: attributes.fontSize + "vw",
-		textAlign: attributes.textAlign,
+		maxWidth: boxWidth + 'vw',
+		fontSize: fontSize + 'vw',
+		textAlign,
 	};
-	const blockProps = useBlockProps.save({
-		className: "wrapper",
+	const blockProps = useBlockProps.save( {
+		className: 'wrapper',
 		style: inlineStyles,
-	});
+	} );
 
 	return (
 		<>
-			<div {...blockProps}>
+			<div { ...blockProps }>
 				<div className="top">
-					{__(attributes.textInput, metadata.textdomain)}
+					{ __( textInput, metadata.textdomain ) }
 				</div>
 				<div className="bottom" aria-hidden="true">
-					{__(attributes.textInput, metadata.textdomain)}
+					{ __( textInput, metadata.textdomain ) }
 				</div>
 			</div>
 		</>
