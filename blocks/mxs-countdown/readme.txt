@@ -6,15 +6,13 @@ Stable tag:        0.1.0
 License:           GPL-2.0-or-later
 License URI:       https://www.gnu.org/licenses/gpl-2.0.html
 
-A new block created by the create-block tool using a custom external project template.
-
 == NOT INTENDED FOR PRODUCTION ==
 
 This block served as a personal learning project, a practical exercise in building custom blocks.
 
 == Description ==
 
-Provides a counter that can be set for some event in the future.
+Provides a counter that can be set for some event in the future. It uses React to render the editor, and vanilla javascript for the frontend.
 
 == Features ==
 
