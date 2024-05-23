@@ -1,5 +1,13 @@
+/**
+ * WordPress Dependencies
+ */
 import { __ } from '@wordpress/i18n';
 import { useBlockProps } from '@wordpress/block-editor';
+
+/**
+ * Internal Dependencies
+ */
+import metadata from './block.json';
 
 export default function Save( {
 	attributes: {
