@@ -44,11 +44,11 @@
       "default": "center"
     },
     "boxWidth": {
-      "type": "number",
+      "type": "integer",
       "default": 52
     },
     "fontSize": {
-      "type": "number",
+      "type": "integer",
       "default": 7
     }
   },

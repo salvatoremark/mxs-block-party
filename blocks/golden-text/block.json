@@ -14,7 +14,7 @@
     "html": false,
     "color": {
       "background": true,
-      "text": true
+      "text": false
     },
     "spacing": {
       "padding": true,
@@ -37,11 +37,11 @@
       "selector": "div div"
     },
     "boxWidth": {
-      "type": "number",
+      "type": "integer",
       "default": 47
     },
     "fontSize": {
-      "type": "number",
+      "type": "integer",
       "default": 8
     }
   },
