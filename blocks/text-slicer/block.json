@@ -73,6 +73,5 @@
   "textdomain": "text-slicer",
   "editorScript": "file:./index.js",
   "editorStyle": "file:./index.css",
-  "style": "file:./style-index.css",
-  "script": "file:./script.js"
+  "style": "file:./style-index.css"
 }

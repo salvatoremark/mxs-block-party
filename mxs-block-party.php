@@ -45,6 +45,7 @@ if (!class_exists('Msalv_MxsBlockParty')) {
       }
     }
 
+
     function create_block_category($categories) {
       array_unshift($categories, ['slug' => 'mxs', 'title' => 'MXS BLOCKS']);
       // wp_send_json($categories);
