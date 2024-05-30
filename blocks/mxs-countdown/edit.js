@@ -1,6 +1,3 @@
-/**
- * WordPress Dependencies
- */
 import { __ } from '@wordpress/i18n';
 import {
 	useBlockProps,
@@ -10,17 +7,13 @@ import {
 } from '@wordpress/block-editor';
 import { useEffect, useRef } from '@wordpress/element';
 import {
+	DatePicker,
 	PanelBody,
 	RangeControl,
 	TextControl,
 	SelectControl,
 } from '@wordpress/components';
-import { DatePicker } from '@wordpress/components';
 
-/**
- * Internal Dependencies
- */
-import metadata from './block.json';
 import './editor.scss';
 
 export default function Edit( {
@@ -37,7 +30,7 @@ export default function Edit( {
 	setAttributes,
 } ) {
 	const inlineStyles = {
-		maxWidth: boxWidth + 'rem',
+		maxWidth: `${ boxWidth }rem`,
 	};
 	const blockProps = useBlockProps( {
 		className: `has-text-align-${ textAlign }`,
@@ -71,61 +64,37 @@ export default function Edit( {
 		const minutes = Math.floor( ( distance % _hour ) / _minute );
 		const seconds = Math.floor( ( distance % _minute ) / _second );
 
-		if (
-			daysRef.current !== null &&
-			typeof daysRef.current !== 'undefined'
-		) {
-			__(
-				( daysRef.current.innerHTML =
-					days + __( ' days', metadata.texdomain ) ),
-				metadata.textdomain
-			);
+		if ( daysRef.current !== null && daysRef.current !== undefined ) {
+			daysRef.current.innerHTML = `${ days } ${ __(
+				'days',
+				'mxs-countdown'
+			) }`;
 		}
 
-		if (
-			hoursRef.current !== null &&
-			typeof hoursRef.current !== 'undefined'
-		) {
-			hoursRef.current.innerHTML = __(
-				' ' +
-					countdownUnitsDelimeter +
-					' ' +
-					hours +
-					__( ' hours', metadata.texdomain ),
-				metadata.textdomain
-			);
+		if ( hoursRef.current !== null && hoursRef.current !== undefined ) {
+			hoursRef.current.innerHTML = ` ${ countdownUnitsDelimeter } ${ hours } ${ __(
+				'hours',
+				'mxs-countdown'
+			) }`;
 		}
 
-		if (
-			minutesRef.current !== null &&
-			typeof minutesRef.current !== 'undefined'
-		) {
-			minutesRef.current.innerHTML = __(
-				' ' +
-					countdownUnitsDelimeter +
-					' ' +
-					minutes +
-					__( ' minutes', metadata.texdomain ),
-				metadata.textdomain
-			);
+		if ( minutesRef.current !== null && minutesRef.current !== undefined ) {
+			minutesRef.current.innerHTML = ` ${ countdownUnitsDelimeter } ${ minutes } ${ __(
+				'minutes',
+				'mxs-countdown'
+			) }`;
 		}
 
-		if (
-			secondsRef.current !== null &&
-			typeof secondsRef.current !== 'undefined'
-		) {
-			secondsRef.current.innerHTML = __(
-				' ' +
-					countdownUnitsDelimeter +
-					' ' +
-					seconds +
-					__( ' seconds', metadata.texdomain ),
-				metadata.textdomain
-			);
+		if ( secondsRef.current !== null && secondsRef.current !== undefined ) {
+			secondsRef.current.innerHTML = ` ${ countdownUnitsDelimeter } ${ seconds } ${ __(
+				'seconds',
+				'mxs-countdown'
+			) }`;
 		}
 	};
 
 	useEffect( () => {
+		// eslint-disable-next-line react-hooks/exhaustive-deps
 		timer = setInterval( showRemaining, 1000 );
 		return () => clearInterval( timer );
 	}, [
@@ -142,62 +111,70 @@ export default function Edit( {
 			<BlockControls>
 				<AlignmentToolbar
 					value={ textAlign }
-					onChange={ ( textAlign ) => setAttributes( { textAlign } ) }
+					onChange={ ( newTextAlign ) =>
+						setAttributes( { textAlign: newTextAlign } )
+					}
 				/>
 			</BlockControls>
 			<InspectorControls>
 				<PanelBody title={ __( 'Target Date' ) } initialOpen={ false }>
 					<DatePicker
 						currentDate={ countdownDate }
-						onChange={ ( countdownDate ) =>
-							setAttributes( { countdownDate } )
+						onChange={ ( newCountdownDate ) =>
+							setAttributes( { countdownDate: newCountdownDate } )
 						}
 					/>
 				</PanelBody>
 
 				<PanelBody title={ __( 'Settings' ) } initialOpen={ false }>
 					<TextControl
-						label={ __( ' Heading', metadata.texdomain ) }
+						label={ __( ' Heading', 'mxs-countdown' ) }
 						value={ countdownHeading }
-						onChange={ ( countdownHeading ) =>
-							setAttributes( { countdownHeading } )
+						onChange={ ( newCountdownHeading ) =>
+							setAttributes( {
+								countdownHeading: newCountdownHeading,
+							} )
 						}
 					/>
 
 					<TextControl
-						label={ __(
-							' Target Date Message',
-							metadata.texdomain
-						) }
+						label={ __( ' Target Date Message', 'mxs-countdown' ) }
 						value={ countdownMessage }
-						onChange={ ( countdownMessage ) =>
-							setAttributes( { countdownMessage } )
+						onChange={ ( newCountdownMessage ) =>
+							setAttributes( {
+								countdownMessage: newCountdownMessage,
+							} )
 						}
 					/>
 
 					<TextControl
 						label={ __(
 							' Heading Font Size (rem)',
-							metadata.texdomain
+							'mxs-countdown'
 						) }
 						value={ countdownHeadingFontSize }
-						onChange={ ( countdownHeadingFontSize ) =>
-							setAttributes( { countdownHeadingFontSize } )
+						onChange={ ( newCountdownHeadingFontSize ) =>
+							setAttributes( {
+								countdownHeadingFontSize:
+									newCountdownHeadingFontSize,
+							} )
 						}
 					/>
 					<TextControl
 						label={ __(
 							' Countdown Font Size (rem)',
-							metadata.texdomain
+							'mxs-countdown'
 						) }
 						value={ countdownFontSize }
-						onChange={ ( countdownFontSize ) =>
-							setAttributes( { countdownFontSize } )
+						onChange={ ( newCountdownFontSize ) =>
+							setAttributes( {
+								countdownFontSize: newCountdownFontSize,
+							} )
 						}
 					/>
 
 					<SelectControl
-						label={ __( ' Units Delimeter', metadata.texdomain ) }
+						label={ __( ' Units Delimeter', 'mxs-countdown' ) }
 						value={ countdownUnitsDelimeter }
 						options={ [
 							{ label: '•', value: '•' },
@@ -205,16 +182,19 @@ export default function Edit( {
 							{ label: ':', value: ':' },
 							{ label: '|', value: '|' },
 						] }
-						onChange={ ( countdownUnitsDelimeter ) =>
-							setAttributes( { countdownUnitsDelimeter } )
+						onChange={ ( newCountdownUnitsDelimeter ) =>
+							setAttributes( {
+								countdownUnitsDelimeter:
+									newCountdownUnitsDelimeter,
+							} )
 						}
 						__nextHasNoMarginBottom
 					/>
 					<RangeControl
-						label={ __( ' Box Width', metadata.texdomain ) }
+						label={ __( ' Box Width', 'mxs-countdown' ) }
 						value={ boxWidth }
-						onChange={ ( boxWidth ) =>
-							setAttributes( { boxWidth } )
+						onChange={ ( newBoxWidth ) =>
+							setAttributes( { boxWidth: newBoxWidth } )
 						}
 						min={ 3 }
 						max={ 100 }
@@ -228,16 +208,16 @@ export default function Edit( {
 						ref={ countdownRef }
 						className={ `countdownText countdownHeadingFontSize-${ countdownHeadingFontSize }` }
 						style={ {
-							fontSize: countdownHeadingFontSize + 'rem',
+							fontSize: `${ countdownHeadingFontSize }rem`,
 						} }
 					>
-						{ __( countdownHeading, metadata.textdomain ) }
+						{ countdownHeading }
 					</h6>
 				) }
 				<div
 					id="mxs-countdown"
 					style={ {
-						fontSize: countdownFontSize + 'rem',
+						fontSize: `${ countdownFontSize }rem`,
 					} }
 				>
 					<span className="days" ref={ daysRef }></span>
